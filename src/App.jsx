@@ -1,14 +1,11 @@
 import './App.css'
-import ThemeSwitcher from './components/ThemeSwitcher'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-    <h1 className="text-3xl font-bold underline dark:text-white">
-      Hello world!
-    </h1>
-    <ThemeSwitcher />
+    <Navbar />
     </>
   )
 }
