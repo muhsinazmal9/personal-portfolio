@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
     body {
-        @apply bg-white dark:bg-[#222222];
+        @apply bg-customGray-200 dark:bg-customGray-900 font-body;
     }
 }
