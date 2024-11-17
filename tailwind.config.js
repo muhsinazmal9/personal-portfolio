@@ -1,3 +1,4 @@
+import typography from '@tailwindcss/typography'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -26,6 +27,6 @@ export default {
       'body': ['Inter', 'sans-serif'],
     },
   },
-  plugins: [ require('@tailwindcss/typography')],
+  plugins: [typography],
 }
 

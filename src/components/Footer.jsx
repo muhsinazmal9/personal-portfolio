@@ -2,8 +2,8 @@ import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
 
 export default function Footer() {
     return (
-        <footer aria-labelledby="footer-heading" className="bg-customGray-100 dark:bg-customGray-800 fixed bottom-0 w-full">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+        <footer aria-labelledby="footer" className="bg-customGray-100 dark:bg-customGray-800 w-full">
+            <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 md:flex md:items-center md:justify-between space-y-4 md:space-y-0 lg:px-8">
                 <div className="flex justify-center space-x-6 md:order-2">
                     <a href="https://twitter.com/muhsinazmal9" className="text-customGray-500 hover:text-customGray-600">
                         <span className="sr-only">Twitter</span>
@@ -20,7 +20,7 @@ export default function Footer() {
                         <SiLinkedin className='text-customGray-500 hover:text-customGray-600 dark:hover:text-customGray-400' size={24} />
                     </a>
                 </div>
-                <div className="mt-8 md:mt-0 md:order-1">
+                <div className="md:order-1">
                     <p className="text-center text-base text-customGray-500">© {new Date().getFullYear()} Muhsin Azmal</p>
                 </div>
             </div>
