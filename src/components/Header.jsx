@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
-import { User, Folder, Mail, BookOpen, X, Menu as MenuIcon } from 'lucide-react';
+import { User, Folder, Mail, BookOpen, X, Menu as MenuIcon, Sun, Moon } from 'lucide-react';
 
 const navigation = [
   { name: 'Muhsin', href: '#about' },
@@ -37,6 +37,10 @@ const Header = () => {
                 <span>{item.name}</span>
               </a>
             ))}
+            <a href="https://github.com/muhsinazmal9">
+              <Sun></Sun>
+            </a>
+              <Moon></Moon>
           </div>
 
           {/* Mobile Menu Button */}
