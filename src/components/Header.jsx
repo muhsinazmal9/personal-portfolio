@@ -14,7 +14,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white dark:bg-customGray-900 fixed top-0 w-full z-10">
+    <header className="bg-white dark:bg-customGray-900 w-full z-10">
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <nav className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 relative">
           {/* Logo/Name as NavLink */}

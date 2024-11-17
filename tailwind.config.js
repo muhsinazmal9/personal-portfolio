@@ -26,6 +26,6 @@ export default {
       'body': ['Inter', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [ require('@tailwindcss/typography')],
 }
 
