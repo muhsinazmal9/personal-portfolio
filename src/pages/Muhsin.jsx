@@ -54,7 +54,7 @@ export default function Muhsin() {
 
     return (
         <Layout>
-            <div className="max-w-4xl mx-auto rounded-lg space-y-8 md:px-0 px-4">
+            <div className="max-w-4xl mx-auto rounded-lg space-y-8 lg:px-0 px-4">
                 <div className="relative w-32 h-32 overflow-hidden">
                     <img
                         className="w-full h-full object-cover rounded-full bg-customGray-50 dark:bg-customGray-800"
@@ -91,7 +91,7 @@ Outside of programming, I enjoy photography, travel, and video games (Call of Du
                 </article>
             </div>
 
-            <section className="space-y-6 mt-8 max-w-4xl mx-auto">
+            <section className="space-y-6 mt-8 max-w-4xl mx-auto px-4 lg:px-0">
                 <h2 className="text-2xl font-normal text-customGray-900 dark:text-white border-b pb-2 border-customGray-200 dark:border-customGray-700">
                     Featured Projects
                 </h2>
