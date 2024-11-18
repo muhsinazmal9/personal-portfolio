@@ -1,13 +1,14 @@
 import { Fragment, useState, useEffect } from 'react';
 import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
-import { User, Folder, Mail, BookOpen, X, Menu as MenuIcon, Sun, Moon } from 'lucide-react';
+import { X, Menu as MenuIcon, Sun, Moon } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Muhsin', href: '#about' },
-  { name: 'About', href: '#about', icon: User },
-  { name: 'Projects', href: '#projects', icon: Folder },
-  { name: 'Blog', href: '#blog', icon: BookOpen },
-  { name: 'Contact', href: '#contact', icon: Mail },
+  { name: 'Muhsin Azmal', href: '/', skipInMobile: true, primary: true },
+  { name: 'About', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Header = () => {
@@ -37,44 +38,48 @@ const Header = () => {
   return (
     <header className="bg-white dark:bg-customGray-900 w-full z-10">
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-        <nav className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 relative">
-          {/* Logo/Name as NavLink */}
-          {/* <a
-            href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
-          >
-            Muhsin Azmal
-          </a> */}
-
+        <nav className="flex flex-row items-center justify-between md:justify-center md:space-x-12 relative">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <NavLink
                 key={item.name}
-                href={item.href}
-                className="flex items-center space-x-1 text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400 transition-colors duration-200"
+                to={item.href}
+                className={({ isActive }) => [
+                  isActive ? 'dark:text-customGray-100 text-customGray-900 font-semibold' : 'dark:text-customGray-300 text-customGray-600 hover:text-customGray-700 dark:hover:text-customGray-100',
+                ].join('text-customGray-600  dark:text-customGray-300 transition-colors duration-200')}
               >
-                {item.icon && <item.icon size={18} />}
                 <span>{item.name}</span>
-              </a>
+              </NavLink>
             ))}
 
+          </div>
+
+          {/* Logo/Name as NavLink on Mobile */}
+          <Link
+            to="/"
+            className="md:hidden text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
+          >
+            Muhsin Azmal
+          </Link>
+
+          <div className="flex items-center gap-4">
             {/* Theme Toggle */}
             <a
               onClick={handleTheme}
-              className="cursor-pointer flex items-center text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400 transition-colors duration-200"
+              className="cursor-pointer dark:text-customGray-300 text-customGray-600 hover:text-customGray-700 dark:hover:text-customGray-100"
             >
               {themeIcon}
             </a>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(true)}
-            className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 p-2 rounded-md text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400"
-          >
-            <MenuIcon className="h-6 w-6" />
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="md:hidden rounded-md text-customGray-600 hover:text-customGray-700 dark:text-customGray-300 dark:hover:text-customGray-100"
+            >
+              <MenuIcon className="h-6 w-6" />
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -111,28 +116,47 @@ const Header = () => {
                     <div className="flex h-full flex-col overflow-y-auto bg-white dark:bg-customGray-900 shadow-xl">
                       <div className="px-6 pt-6 pb-4 flex items-center justify-between">
                         <DialogTitle className="text-lg font-medium text-customGray-900 dark:text-customGray-100">
-                          Menu
+                          <NavLink
+                            to="/"
+                            onClick={() => setIsOpen(false)}
+                            className={({ isActive }) => [
+                              isActive
+                                ? 'dark:text-customGray-100 text-customGray-900 font-semibold'
+                                : 'dark:text-customGray-300 text-customGray-600 hover:text-customGray-700 dark:hover:text-customGray-100',
+                            ].join('text-customGray-600  dark:text-customGray-300 transition-colors duration-200')}
+                          >
+                          Muhsin Azmal
+                          </NavLink>
                         </DialogTitle>
                         <button
                           onClick={() => setIsOpen(false)}
-                          className="rounded-md text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400"
+                          className="rounded-md text-customGray-600 hover:text-customGray-700 dark:text-customGray-300 dark:hover:text-customGray-100"
                         >
                           <X className="h-6 w-6" />
                         </button>
                       </div>
                       <div className="relative flex-1 px-6 py-4">
-                        <div className="flex flex-col space-y-6">
-                          {navigation.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => setIsOpen(false)}
-                              className="flex items-center space-x-2 text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400 transition-colors duration-200"
-                            >
-                              {item.icon && <item.icon size={20} />}
-                              <span className="text-lg">{item.name}</span>
-                            </a>
-                          ))}
+                        <div className="flex flex-col space-y-4">
+                          {navigation.map((item) =>
+                            item.skipInMobile ? null : (
+                              <NavLink
+                                key={item.name}
+                                to={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={({ isActive }) =>
+                                  [
+                                    isActive
+                                      ? 'dark:text-customGray-100 text-customGray-900 font-semibold'
+                                      : 'dark:text-customGray-300 text-customGray-600 hover:text-customGray-700 dark:hover:text-customGray-100',
+                                    'text-lg',
+                                  ].join(' ')
+                                }
+                              >
+                                <span className="text-lg">{item.name}</span>
+                              </NavLink>
+                            )
+                          )}
+
                         </div>
                       </div>
                     </div>

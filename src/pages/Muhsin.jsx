@@ -1,19 +1,36 @@
-import { Footer, Header } from "../components";
 import ReactMarkdown from "react-markdown";
+import { Layout } from "../layouts";
 
 export default function Muhsin() {
     return (
-        <>
-            <Header />
-            <div className="max-w-4xl mx-auto rounded-lg space-y-8 md:px-0 px-4 py-8 md:py-12">
-                <div className="relative  overflow-hidden w-32 h-32">
-                    <img className="w-full h-full object-cover rounded-full bg-customGray-200 dark:bg-customGray-700" src="./avatar-agnostic.png" alt="avatar" />
-                    <div className="absolute bottom-0 right-0 w-12 h-12 bg-white rounded-full border-2 border-customGray-50 dark:border-customGray-800 flex items-center justify-center text-2xl">
-                        👋
+        <Layout>
+            <div className="max-w-4xl mx-auto rounded-lg space-y-8 md:px-0 px-4">
+                <div className="relative w-32 h-32 overflow-hidden">
+                    <img
+                        className="w-full h-full object-cover rounded-full bg-customGray-50 dark:bg-customGray-800"
+                        src="./avatar-agnostic.png"
+                        alt="User Avatar"
+                    />
+                    <div
+                        className="absolute bottom-0 right-0 w-12 h-12 flex items-center justify-center text-2xl bg-customGray-50 dark:bg-customGray-800 border-2 border-white dark:border-customGray-900 rounded-full"
+                    >
+                        <img
+                            className="w-6 h-6"
+                            src="./waving-hand.png"
+                            alt="Waving Hand"
+                        />
                     </div>
                 </div>
 
-                <article className="prose prose-md prose-neutral max-w-none dark:prose-invert prose-a:text-emerald-600 hover:prose-a:text-emerald-500 dark:prose-a:text-emerald-400 dark:hover:prose-a:text-emerald-300">
+
+                <article className="prose prose-neutral max-w-none
+                dark:prose-invert
+                prose-a:text-emerald-600
+                hover:prose-a:text-emerald-500
+                dark:prose-a:text-emerald-400
+                dark:hover:prose-a:text-emerald-300
+                prose-strong:font-semibold
+                prose-headings:font-normal">
                     <ReactMarkdown >
                         {`### Hi, I’m **Muhsin Azmal** — a software developer currently based in Dhaka.
 
@@ -23,7 +40,6 @@ Outside of programming, I enjoy photography, travel, and video games (Call of Du
                     </ReactMarkdown>
                 </article>
             </div>
-            <Footer />
-        </>
+        </Layout>
     );
 }

@@ -1,3 +1,9 @@
+import { Layout } from "../layouts";
+
 export default function Projects() {
-    return <h1>Projects</h1>;
+    return (
+        <Layout>
+            <h1>Projects</h1>
+        </Layout>
+    );
 }

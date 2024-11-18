@@ -2,7 +2,7 @@ import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
 
 export default function Footer() {
     return (
-        <footer aria-labelledby="footer" className="bg-customGray-100 dark:bg-customGray-800 w-full">
+        <footer aria-labelledby="footer" className="bg-customGray-50 dark:bg-customGray-800 w-full">
             <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 md:flex md:items-center md:justify-between space-y-4 md:space-y-0 lg:px-8">
                 <div className="flex justify-center space-x-6 md:order-2">
                     <a href="https://twitter.com/muhsinazmal9" className="text-customGray-500 hover:text-customGray-600">

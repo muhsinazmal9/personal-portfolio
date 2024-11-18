@@ -1,9 +1,9 @@
 import { Layout } from "../layouts";
 
-export default function Contact() {
+export default function About() {
     return (
         <Layout>
-            <h1>Projects</h1>
+            <h1>About</h1>
         </Layout>
     );
 }

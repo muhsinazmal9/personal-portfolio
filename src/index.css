@@ -5,6 +5,6 @@
 
 @layer base {
     body {
-        @apply bg-customGray-200 dark:bg-customGray-900 font-body;
+        @apply bg-white dark:bg-customGray-900 font-body;
     }
 }
