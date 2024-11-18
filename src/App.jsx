@@ -4,25 +4,6 @@ import { useState, useEffect } from 'react'
 import { Muhsin, Projects, Contact } from './pages/';
 
 function App() {
-
-  // Initialize theme state based on local storage or system preference
-  const [theme, setTheme] = useState(() => {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) return storedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
-
-  // Toggle theme between light and dark
-  const handleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
-  // Update local storage and document class when theme changes
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [theme]);
-
   return (
     <>
       <Routes>

@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from '@headlessui/react';
 import { User, Folder, Mail, BookOpen, X, Menu as MenuIcon, Sun, Moon } from 'lucide-react';
 
@@ -12,6 +12,27 @@ const navigation = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Initialize theme state based on local storage or system preference
+  const [theme, setTheme] = useState(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) return storedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  // Toggle theme between light and dark
+  const handleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  // Update local storage and document class when theme changes
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  // theme icons
+  const themeIcon = theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />;
 
   return (
     <header className="bg-white dark:bg-customGray-900 w-full z-10">
@@ -37,10 +58,14 @@ const Header = () => {
                 <span>{item.name}</span>
               </a>
             ))}
-            <a href="https://github.com/muhsinazmal9">
-              <Sun></Sun>
+
+            {/* Theme Toggle */}
+            <a
+              onClick={handleTheme}
+              className="cursor-pointer flex items-center text-customGray-600 hover:text-blue-600 dark:text-customGray-300 dark:hover:text-blue-400 transition-colors duration-200"
+            >
+              {themeIcon}
             </a>
-              <Moon></Moon>
           </div>
 
           {/* Mobile Menu Button */}
