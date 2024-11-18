@@ -2,7 +2,7 @@ import { Layout } from "../layouts";
 
 export default function Projects() {
     return (
-        <Layout>
+        <Layout title={'Projects'}>
             <h1>Projects</h1>
         </Layout>
     );
