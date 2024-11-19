@@ -36,7 +36,7 @@ const Header = () => {
   const themeIcon = theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />;
 
   return (
-    <header className="bg-white dark:bg-customGray-900 w-full z-10">
+    <header className="bg-white dark:bg-customGray-900 w-full md:mb-12 mb-8">
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <nav className="flex flex-row items-center justify-between md:justify-center md:space-x-12 relative">
           {/* Desktop Navigation */}

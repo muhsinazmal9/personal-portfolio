@@ -7,11 +7,9 @@ export default function Layout({ children, title }) {
       <>
          <PageTitle title={title} />
 
-         <div className="flex flex-col gap-4 md:gap-8">
-            <Header />
-            {children}
-            <Footer />
-         </div>
+         <Header />
+         {children}
+         <Footer />
       </>
    );
 }
