@@ -33,7 +33,7 @@ const Header = () => {
   }, [theme]);
 
   // theme icons
-  const themeIcon = theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />;
+  const themeIcon = theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />;
 
   return (
     <header className="bg-white dark:bg-customGray-900 w-full z-10">
@@ -77,7 +77,7 @@ const Header = () => {
               onClick={() => setIsOpen(true)}
               className="md:hidden rounded-md text-customGray-600 hover:text-customGray-700 dark:text-customGray-300 dark:hover:text-customGray-100"
             >
-              <MenuIcon className="h-6 w-6" />
+              <MenuIcon className="h-[26px] w-[26px]" />
             </button>
           </div>
         </nav>
