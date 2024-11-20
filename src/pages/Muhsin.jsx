@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import { Layout } from "../layouts";
 import { Link } from "react-router-dom";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 const ProjectCard = ({ title, description, technologies, link, imageSrc, createdAtYear}) => (
     <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 rounded-xl transition-all duration-300">
@@ -69,7 +70,7 @@ export default function Muhsin() {
 
     return (
         <Layout>
-            <div className="max-w-4xl mx-auto rounded-lg space-y-8 lg:px-0 px-4 mb-32">
+            <section className="max-w-4xl mx-auto rounded-lg space-y-8 lg:px-0 px-4 mb-32">
                 <div className="relative w-32 h-32 overflow-hidden">
                     <img
                         className="w-full h-full object-cover rounded-full bg-customGray-50 dark:bg-customGray-800"
@@ -94,20 +95,26 @@ export default function Muhsin() {
                 hover:prose-a:text-emerald-500
                 dark:prose-a:text-emerald-400
                 dark:hover:prose-a:text-emerald-300
-                prose-strong:font-semibold
-                prose-headings:font-normal">
+                prose-strong:font-medium
+                prose-headings:font-normal
+                prose-headings:leading-tight">
                     <ReactMarkdown >
-                        {`### Hi, I’m **Muhsin Azmal** — a software developer currently based in Dhaka.
+                        {`## Hi, I'm ***Muhsin***
 
-I specialize in web application development, focusing on **PHP/Laravel** for both backend and frontend work. I enjoy creating seamless web experiences and building scalable **REST APIs** to ensure smooth functionality for users. I also have experience with **ReactJS**, making me a full-stack developer capable of handling both client-side and server-side development. Prior to that, I worked at [SM40](https://sm40.com/) and [Binary Fusion](https://binary-fusion.com/).
+I develop web applications using **PHP/Laravel** for both backend and frontend work. I create seamless web experiences and build scalable **REST APIs** to ensure smooth functionality for users. I also have experience with **ReactJS**, making me a full-stack developer capable of handling both client-side and server-side development.
 
-Outside of programming, I enjoy photography, travel, and video games (Call of Duty Mobile and Counter-Strike are my favorites). I'm also a big fan of Asian food.`}
+Outside of coding, I'm a shutterbug, a travel enthusiast, and an avid reader. I also enjoy playing video games in my free time. I'm always open to new challenges and opportunities to learn and grow as a developer.`}
                     </ReactMarkdown>
                 </article>
-            </div>
+                
+                <Link to="/view-cv" className="text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500 hover:underline flex items-center gap-2">
+                    View CV ↗︎
+                </Link>
+            </section>
 
+            {/* Featured Projects */}
             <section className="space-y-6 mt-8 max-w-4xl mx-auto px-4 lg:px-0">
-                <h2 className="text-xl font-semibold text-customGray-900 dark:text-white">
+                <h2 className="text-xl text-customGray-900 dark:text-white md:text-2xl font-display">
                     Featured Projects
                 </h2>
                 <div className="grid grid-cols-1 gap-6">
@@ -123,7 +130,9 @@ Outside of programming, I enjoy photography, travel, and video games (Call of Du
                         />
                     ))}
                 </div>
-                <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline ">See all projects</Link>
+                <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline">
+                    See all projects →
+                </Link>
             </section>
         </Layout>
     );
