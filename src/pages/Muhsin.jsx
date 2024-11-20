@@ -9,7 +9,7 @@ const ProjectCard = ({ title, description, technologies, link, imageSrc, created
             <div>
                 <Link
                     to={link}
-                    className="hover:underline decoration-2"
+                    className="hover:underline decoration-customGray-600 dark:decoration-customGray-100 decoration-2"
                 >
                     <h3 className="text-lg font-semibold text-customGray-900 dark:text-white mb-2">{title}</h3>
                 </Link>
@@ -123,6 +123,7 @@ Outside of programming, I enjoy photography, travel, and video games (Call of Du
                         />
                     ))}
                 </div>
+                <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline ">See all projects</Link>
             </section>
         </Layout>
     );
