@@ -31,11 +31,11 @@ const ProjectCard = ({ title, description, technologies, link, imageSrc, created
                 ))}
             </div>
         </div>
-        <div className="md:basis-64 max-w-64 w-full h-64 md:flex-shrink-0
+        <Link to={link} className="md:basis-64 max-w-64 w-full h-64 md:flex-shrink-0
             bg-customGray-50 dark:bg-customGray-800
             rounded-3xl flex items-center justify-center text-customGray-500 dark:text-customGray-300">
             {imageSrc ? <img className="w-full h-full object-cover rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>}
-        </div>
+        </Link>
     </div>
 );
 
@@ -47,25 +47,9 @@ export default function Muhsin() {
             description: "Developed a full-stack e-commerce solution with Laravel backend and React frontend, featuring robust product management, user authentication, and payment integration.",
             technologies: ["Laravel", "ReactJS", "MySQL", "Stripe"],
             link: "https://github.com/muhsin-azmal/ecommerce-platform",
-            imageSrc: "./prowjekt.jpg",
+            imageSrc: "./prowjekt.png",
             createdAtYear: 2023
         },
-        {
-            title: "Task Management API",
-            description: "Built a scalable REST API for task management with comprehensive CRUD operations, user roles, and authentication using Laravel and JWT.",
-            technologies: ["PHP", "Laravel", "JWT", "MySQL"],
-            link: "https://github.com/muhsin-azmal/task-management-api",
-            imageSrc: "./prowjekt.jpg",
-            createdAtYear: 2023
-        },
-        {
-            title: "Portfolio Website",
-            description: "Designed and implemented a responsive personal portfolio website showcasing projects and skills using modern web technologies.",
-            technologies: ["ReactJS", "Tailwind CSS", "Vercel"],
-            link: "https://muhsinazmal.com",
-            imageSrc: "./prowjekt.jpg",
-            createdAtYear: 2023
-        }
     ];
 
     return (
@@ -130,9 +114,11 @@ Outside of coding, I'm a shutterbug, a travel enthusiast, and an avid reader. I 
                         />
                     ))}
                 </div>
-                <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline">
-                    See all projects →
-                </Link>
+                <div>
+                    <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline block">
+                        See all projects →
+                    </Link>
+                </div>
             </section>
         </Layout>
     );
