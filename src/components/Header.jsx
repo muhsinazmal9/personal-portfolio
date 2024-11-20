@@ -22,9 +22,7 @@ const Header = () => {
   });
 
   // Toggle theme between light and dark
-  const handleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+  const handleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   // Update local storage and document class when theme changes
   useEffect(() => {
@@ -137,8 +135,7 @@ const Header = () => {
                       </div>
                       <div className="relative flex-1 px-6 py-4">
                         <div className="flex flex-col space-y-4">
-                          {navigation.map((item) =>
-                            item.skipInMobile ? null : (
+                          {navigation.filter(item => !item.skipInMobile).map((item) =>
                               <NavLink
                                 key={item.name}
                                 to={item.href}
@@ -154,7 +151,6 @@ const Header = () => {
                               >
                                 <span className="text-lg">{item.name}</span>
                               </NavLink>
-                            )
                           )}
 
                         </div>
