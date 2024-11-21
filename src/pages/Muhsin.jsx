@@ -31,10 +31,10 @@ const ProjectCard = ({ title, description, technologies, link, imageSrc, created
                 ))}
             </div>
         </div>
-        <Link to={link} className="md:basis-64 max-w-64 w-full h-64 md:flex-shrink-0
+        <Link to={link} className="md:basis-64 w-full h-64 md:flex-shrink-0
             bg-customGray-50 dark:bg-customGray-800
             rounded-3xl flex items-center justify-center text-customGray-500 dark:text-customGray-300">
-            {imageSrc ? <img className="w-full h-full object-cover rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>}
+            {imageSrc ? <img className="w-full h-full object-contain rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>}
         </Link>
     </div>
 );
@@ -87,7 +87,7 @@ export default function Muhsin() {
 
 I develop web applications using **PHP/Laravel** for both backend and frontend work. I create seamless web experiences and build scalable **REST APIs** to ensure smooth functionality for users. I also have experience with **ReactJS**, making me a full-stack developer capable of handling both client-side and server-side development.
 
-Outside of coding, I'm a shutterbug, a travel enthusiast, and an avid reader. I also enjoy playing video games in my free time. I'm always open to new challenges and opportunities to learn and grow as a developer.`}
+Outside of coding, I'm a shutterbug, travel enthusiast, and avid reader. I'm always open to new challenges and opportunities to learn and grow as a developer. In my free time, I enjoy playing sports and e-sports.`}
                     </ReactMarkdown>
                 </article>
                 
