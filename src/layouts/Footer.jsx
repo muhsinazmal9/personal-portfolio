@@ -1,6 +1,6 @@
 import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
 
-export default function Footer() {
+const Footer = () => {
     return (
         <footer aria-labelledby="footer" className="bg-customGray-50 dark:bg-customGray-800 w-full mt-8 md:mt-12">
             <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 md:flex md:items-center md:justify-between space-y-4 md:space-y-0 lg:px-8">
@@ -27,3 +27,5 @@ export default function Footer() {
         </footer>
     )
 }
+
+export default Footer

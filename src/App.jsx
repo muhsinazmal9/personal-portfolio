@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
-import { Muhsin, About, Projects,Project, Contact, Blog } from './pages/';
+import { Muhsin, About, Projects, Project, Contact, Blog } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -48,4 +48,3 @@ function App() {
 }
 
 export default App
-window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = { isDisabled: true };

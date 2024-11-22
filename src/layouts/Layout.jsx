@@ -1,8 +1,9 @@
-import { Header, Footer } from "../components";
 import PropTypes from 'prop-types';
 import { PageTitle } from "../components/PageTitle";
+import { Header } from "../layouts";
+import { Footer } from "../layouts";
 
-export default function Layout({ children, title }) {
+const Layout = ({ children, title }) => {
    return (
       <>
          <PageTitle title={title} />
@@ -13,6 +14,8 @@ export default function Layout({ children, title }) {
       </>
    );
 }
+
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

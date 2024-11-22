@@ -1,42 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import { Layout } from "../layouts";
 import { Link } from "react-router-dom";
-
-const ProjectCard = ({ title, description, technologies, link, imageSrc, createdAtYear}) => (
-    <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 rounded-xl transition-all duration-300">
-        <div className="md:basis-auto flex-grow space-y-4">
-            {createdAtYear && <p className="text-sm text-customGray-500 dark:text-customGray-300">{createdAtYear}</p>}
-            <div>
-                <Link
-                    to={link}
-                    className="hover:underline decoration-customGray-600 dark:decoration-customGray-100 decoration-2"
-                >
-                    <h3 className="text-lg font-semibold text-customGray-900 dark:text-white mb-2">{title}</h3>
-                </Link>
-                <p className="text-customGray-600 dark:text-customGray-300 leading-relaxed">{description}</p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-                {technologies.map((tech, index) => (
-                    <span
-                        key={index}
-                        className="px-3 py-1 rounded-full text-xs font-medium
-                        bg-customGray-50 dark:bg-customGray-700
-                        text-customGray-700 dark:text-customGray-300
-                        hover:bg-customGray-200 dark:hover:bg-customGray-600
-                        transition-colors duration-200"
-                    >
-                        {tech}
-                    </span>
-                ))}
-            </div>
-        </div>
-        <Link to={link} className="md:basis-64 w-full h-64 md:flex-shrink-0
-            bg-customGray-50 dark:bg-customGray-800
-            rounded-3xl flex items-center justify-center text-customGray-500 dark:text-customGray-300">
-            {imageSrc ? <img className="w-full h-full object-contain rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>}
-        </Link>
-    </div>
-);
+import projects from "../jsons/projects.json";
+import ProjectCard from "../components/ProjectCard";
 
 const avatar = {
     src: "./avatar-agnostic.png",
@@ -54,30 +20,19 @@ const AboutMeArticle = () => {
                 prose-strong:font-medium
                 prose-headings:font-normal
                 prose-headings:leading-tight">
-                    <ReactMarkdown >
-                        {`## Hi, I'm ***Muhsin***
+            <ReactMarkdown >
+                {`## Hi, I'm ***Muhsin***
 
 I develop web applications using **PHP/Laravel** for both backend and frontend work. I create seamless web experiences and build scalable **REST APIs** to ensure smooth functionality for users. I also have experience with **ReactJS**, making me a full-stack developer capable of handling both client-side and server-side development.
 
 Outside of coding, I'm a shutterbug, travel enthusiast, and avid reader. I'm always open to new challenges and opportunities to learn and grow as a developer. In my free time, I enjoy playing sports and e-sports.`}
-                    </ReactMarkdown>
-                </article>
+            </ReactMarkdown>
+        </article>
     );
 }
-        
 
-export default function Muhsin() {
-    const projects = [
-        {
-            title: "E-Commerce Platform",
-            description: "Developed a full-stack e-commerce solution with Laravel backend and React frontend, featuring robust product management, user authentication, and payment integration.",
-            technologies: ["Laravel", "ReactJS", "MySQL", "Stripe"],
-            link: "/projects/e-commerce-platform",
-            imageSrc: "./prowjekt.png",
-            createdAtYear: 2023
-        },
-    ];
 
+const Muhsin = () => {
     return (
         <Layout>
             {/* About Me */}
@@ -100,8 +55,8 @@ export default function Muhsin() {
                 </div>
 
 
-               <AboutMeArticle /> 
-                
+                <AboutMeArticle />
+
                 <Link to="/view-cv" className="text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500 hover:underline flex items-center gap-2">
                     View CV ↗︎
                 </Link>
@@ -113,17 +68,20 @@ export default function Muhsin() {
                     Featured Projects
                 </h2>
                 <div className="grid grid-cols-1 gap-6">
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            title={project.title}
-                            description={project.description}
-                            technologies={project.technologies}
-                            link={project.link}
-                            imageSrc={project.imageSrc}
-                            createdAtYear={project.createdAtYear}
-                        />
-                    ))}
+                    {
+                        projects?.slice(0, 3).map((project, index) => (
+                            <ProjectCard
+                                key={index}
+                                slug={project.slug}
+                                title={project.title}
+                                description={project.description}
+                                technologies={project.technologies}
+                                link={project.link}
+                                imageSrc={project.image}
+                                createdAtYear={project.createdAtYear}
+                            />
+                        ))
+                    }
                 </div>
                 <div>
                     <Link to="/projects" className="text-customGray-900 dark:text-customGray-100 hover:text-customGray-600 dark:hover:text-customGray-50 hover:underline block">
@@ -134,3 +92,5 @@ export default function Muhsin() {
         </Layout>
     );
 }
+
+export default Muhsin

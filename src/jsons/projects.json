@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "slug": "e-commerce-platform",
+        "description": "A platform for buying and selling products.",
+        "technologies": [
+            "Laravel",
+            "ReactJS",
+            "MySQL",
+            "Stripe"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2023
+    },
+    {
+        "id": 2,
+        "title": "Blog Platform",
+        "description": "A platform for writing and sharing blog posts.",
+        "technologies": [
+            "Laravel",
+            "VueJS",
+            "MySQL"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2023
+    },
+    {
+        "id": 3,
+        "title": "Task Management System",
+        "slug": "task-management-system",
+        "description": "A collaborative project management tool with real-time updates and team features.",
+        "technologies": [
+            "Next.js",
+            "TypeScript",
+            "MongoDB",
+            "Socket.io"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2022
+    },
+    {
+        "id": 4,
+        "title": "AI Image Generator",
+        "slug": "ai-image-generator",
+        "description": "An application that generates unique images using artificial intelligence and machine learning.",
+        "technologies": [
+            "Python",
+            "TensorFlow",
+            "Flask",
+            "React",
+            "AWS"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2023
+    },
+    {
+        "id": 5,
+        "title": "Social Media Dashboard",
+        "slug": "social-media-dashboard",
+        "description": "A comprehensive analytics dashboard for tracking social media metrics across multiple platforms.",
+        "technologies": [
+            "Angular",
+            "Node.js",
+            "PostgreSQL",
+            "Docker"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2022
+    },
+    {
+        "id": 6,
+        "title": "Weather Forecast App",
+        "slug": "weather-forecast-app",
+        "description": "A mobile-first weather application with real-time updates and interactive maps.",
+        "technologies": [
+            "React Native",
+            "Redux",
+            "OpenWeatherAPI",
+            "Firebase"
+        ],
+        "image": "https://via.placeholder.com/1080",
+        "createdAtYear": 2023
+    }
+]
