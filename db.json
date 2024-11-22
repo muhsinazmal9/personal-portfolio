@@ -1,0 +1,12 @@
+{
+    "projects": [
+        {
+            "title": "E-Commerce Platform",
+            "slug": "e-commerce-platform",
+            "description": "A platform for buying and selling products.",
+            "technologies": ["Laravel", "ReactJS", "MySQL", "Stripe"],
+            "image": "https://via.placeholder.com/150",
+            "createdAtYear": 2023
+        }
+    ]
+}
