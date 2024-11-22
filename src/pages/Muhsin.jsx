@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import { Layout } from "../layouts";
 import { Link } from "react-router-dom";
-import { SquareArrowOutUpRight } from "lucide-react";
 
 const ProjectCard = ({ title, description, technologies, link, imageSrc, createdAtYear}) => (
     <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 rounded-xl transition-all duration-300">
