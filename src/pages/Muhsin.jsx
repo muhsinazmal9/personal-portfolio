@@ -38,41 +38,14 @@ const ProjectCard = ({ title, description, technologies, link, imageSrc, created
     </div>
 );
 
+const avatar = {
+    src: "./avatar-agnostic.png",
+    alt: "User Avatar",
+};
 
-export default function Muhsin() {
-    const projects = [
-        {
-            title: "E-Commerce Platform",
-            description: "Developed a full-stack e-commerce solution with Laravel backend and React frontend, featuring robust product management, user authentication, and payment integration.",
-            technologies: ["Laravel", "ReactJS", "MySQL", "Stripe"],
-            link: "https://github.com/muhsin-azmal/ecommerce-platform",
-            imageSrc: "./prowjekt.png",
-            createdAtYear: 2023
-        },
-    ];
-
+const AboutMeArticle = () => {
     return (
-        <Layout>
-            <section className="max-w-4xl mx-auto rounded-lg space-y-8 lg:px-0 px-4 mb-32">
-                <div className="relative w-32 h-32 overflow-hidden">
-                    <img
-                        className="w-full h-full object-cover rounded-full bg-customGray-50 dark:bg-customGray-800"
-                        src="./avatar-agnostic.png"
-                        alt="User Avatar"
-                    />
-                    <div
-                        className="absolute bottom-0 right-0 w-12 h-12 flex items-center justify-center text-2xl bg-customGray-50 dark:bg-customGray-800 border-2 border-white dark:border-customGray-900 rounded-full"
-                    >
-                        <img
-                            className="w-6 h-6"
-                            src="./waving-hand.png"
-                            alt="Waving Hand"
-                        />
-                    </div>
-                </div>
-
-
-                <article className="prose prose-neutral max-w-none
+        <article className="prose prose-neutral max-w-none
                 dark:prose-invert
                 prose-a:text-emerald-600
                 hover:prose-a:text-emerald-500
@@ -89,6 +62,45 @@ I develop web applications using **PHP/Laravel** for both backend and frontend w
 Outside of coding, I'm a shutterbug, travel enthusiast, and avid reader. I'm always open to new challenges and opportunities to learn and grow as a developer. In my free time, I enjoy playing sports and e-sports.`}
                     </ReactMarkdown>
                 </article>
+    );
+}
+        
+
+export default function Muhsin() {
+    const projects = [
+        {
+            title: "E-Commerce Platform",
+            description: "Developed a full-stack e-commerce solution with Laravel backend and React frontend, featuring robust product management, user authentication, and payment integration.",
+            technologies: ["Laravel", "ReactJS", "MySQL", "Stripe"],
+            link: "/projects/e-commerce-platform",
+            imageSrc: "./prowjekt.png",
+            createdAtYear: 2023
+        },
+    ];
+
+    return (
+        <Layout>
+            {/* About Me */}
+            <section id="about-me" className="max-w-4xl mx-auto rounded-lg space-y-8 lg:px-0 px-4 mb-32">
+                <div className="relative w-32 h-32 overflow-hidden">
+                    <img
+                        className="w-full h-full object-cover rounded-full bg-customGray-50 dark:bg-customGray-800"
+                        src={avatar.src}
+                        alt={avatar.alt}
+                    />
+                    <div
+                        className="absolute bottom-0 right-0 w-12 h-12 flex items-center justify-center text-2xl bg-customGray-50 dark:bg-customGray-800 border-2 border-white dark:border-customGray-900 rounded-full"
+                    >
+                        <img
+                            className="w-6 h-6"
+                            src="./waving-hand.png"
+                            alt="Waving Hand"
+                        />
+                    </div>
+                </div>
+
+
+               <AboutMeArticle /> 
                 
                 <Link to="/view-cv" className="text-emerald-500 dark:text-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-500 hover:underline flex items-center gap-2">
                     View CV ↗︎
@@ -96,7 +108,7 @@ Outside of coding, I'm a shutterbug, travel enthusiast, and avid reader. I'm alw
             </section>
 
             {/* Featured Projects */}
-            <section className="space-y-6 mt-8 max-w-4xl mx-auto px-4 lg:px-0">
+            <section id="projects" className="space-y-6 mt-8 max-w-4xl mx-auto px-4 lg:px-0">
                 <h2 className="text-customGray-900 dark:text-white text-2xl font-display">
                     Featured Projects
                 </h2>

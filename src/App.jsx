@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
-import { Muhsin, About, Projects, Contact, Blog } from './pages/';
+import { Muhsin, About, Projects,Project, Contact, Blog } from './pages/';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    path: "/projects/:id",
+    element: <Project />,
   },
   {
     path: "/contact",
@@ -34,12 +38,14 @@ const router = createBrowserRouter([
     v7_partialHydration: true,
     v7_relativeSplatPath: true,
     v7_skipActionErrorRevalidation: true,
-    v7_startTransition: true,
   },
 });
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} future={{
+    v7_startTransition: true,
+  }} />;
 }
 
 export default App
+window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = { isDisabled: true };
