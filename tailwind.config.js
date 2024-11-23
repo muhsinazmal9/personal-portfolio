@@ -25,7 +25,7 @@ export default {
     },
     fontFamily: {
       'body': ['Inter', 'sans-serif'],
-      'display': ['Trocchi', 'serif'],
+      'display': ['Fraunces', 'serif'],
     },
   },
   plugins: [typography],

@@ -64,7 +64,7 @@ const Muhsin = () => {
 
             {/* Featured Projects */}
             <section id="projects" className="space-y-6 mt-8 max-w-4xl mx-auto px-4 lg:px-0">
-                <h2 className="text-customGray-900 dark:text-white text-2xl font-display">
+                <h2 className="text-customGray-900 dark:text-white text-3xl font-semibold font-display">
                     Featured Projects
                 </h2>
                 <div className="grid grid-cols-1 gap-6">
