@@ -13,6 +13,7 @@ const Projects = () => {
                         <ProjectCard
                             key={project.id}
                             id={project.id}
+                            slug={project.slug}
                             title={project.title}
                             description={project.description}
                             technologies={project.technologies}

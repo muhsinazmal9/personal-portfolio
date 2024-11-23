@@ -16,6 +16,7 @@
     {
         "id": 2,
         "title": "Blog Platform",
+        "slug": "blog-platform",
         "description": "A platform for writing and sharing blog posts.",
         "technologies": [
             "Laravel",
