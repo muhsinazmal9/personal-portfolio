@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ slug, title, description, technologies, imageSrc, createdAtYear }) => (
-    <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 rounded-xl transition-all duration-300">
+const ProjectCard = ({ myKey, slug, title, description, technologies, imageSrc, createdAtYear, key }) => (
+    console.log(myKey),
+    <div className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-4 rounded-3xl transition-all duration-300 bg-customGray-50 dark:bg-black p-12">
         <div className="md:basis-auto flex-grow space-y-4">
             {createdAtYear && <p className="text-sm text-customGray-500 dark:text-customGray-300">{createdAtYear}</p>}
             <div>
@@ -29,10 +30,8 @@ const ProjectCard = ({ slug, title, description, technologies, imageSrc, created
                 ))}
             </div>
         </div>
-        <Link to={`/projects/${slug}`} className="md:basis-64 w-full h-64 md:flex-shrink-0
-            bg-customGray-50 dark:bg-customGray-800
-            rounded-3xl flex items-center justify-center text-customGray-500 dark:text-customGray-300">
-            {imageSrc ? <img className="w-full h-full object-contain rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>}
+        <Link to={`/projects/${slug}`} className="md:w-64 w-full h-40 md:flex-shrink-0 bg-customGray-50 dark:bg-customGray-800 rounded-md  flex items-center justify-center text-customGray-500 dark:text-customGray-300">
+            {/* {imageSrc ? <img className="w-full h-full object-contain rounded-3xl " src={imageSrc} alt={title} /> : <p>{title}</p>} */}
         </Link>
     </div>
 );

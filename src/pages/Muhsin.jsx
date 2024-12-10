@@ -70,8 +70,10 @@ const Muhsin = () => {
                 <div className="grid grid-cols-1 gap-6">
                     {
                         projects?.slice(0, 3).map((project, index) => (
+                            
                             <ProjectCard
                                 key={index}
+                                myKey={index}
                                 slug={project.slug}
                                 title={project.title}
                                 description={project.description}
